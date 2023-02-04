@@ -19,21 +19,21 @@ body{
 }
 
 #grid{
-    width: auto;
-    height: 40px;
-    max-width: 30%;
+    width: 940px;
+    height: 600px;
+    max-width: 50%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: aquamarine;
-    border: 3px solid black;
+    border: 3px solid rgb(200, 43, 43);
     justify-content: center;
     align-items: center;
 }
 
 .cell{
-    width:15px;
-    height: 15px;
+    /*width:470px;
+    height: 150px;*/
     /*flex: 1 0 10%;*/
     border: 1px solid rgb(192, 192, 192);
     background-color: var(--white-color);
