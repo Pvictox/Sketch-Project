@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white-color: rgb(255, 254, 254);
+}
+
+body{
+    background-color: black;
+}
+
+#position-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid{
+    width: auto;
+    height: 40px;
+    max-width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    border: 3px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell{
+    width:15px;
+    height: 15px;
+    /*flex: 1 0 10%;*/
+    border: 1px solid rgb(192, 192, 192);
+    background-color: var(--white-color);
+}
