@@ -1,7 +1,16 @@
 const gridContainer = document.querySelector("#grid");
 
+let pencilMODE = true;
 
-let fillContainer = (dimension = 30) => {
+/*
+    sk-func TODO:
+        1 - Evento de clique em cada div para mudar a cor  <<< NEXT
+        2 - Permitir que o usuário mude a cor (necessário mexer em sk-UI);
+        3 - Restart grid (todo branco) (necessário mexer em sk-UI);
+*/
+
+
+let fillContainer = (dimension = 16) => {
     //100% / quant de blocos por linha
     let flexBasis_Value = 100/dimension;
     let gridWidth = gridContainer.offsetWidth;
@@ -19,4 +28,26 @@ let fillContainer = (dimension = 30) => {
     }
 }
 
+
+
+let draw = () =>{
+    gridMap = document.querySelectorAll(".cell");
+    let clicked = false;
+    gridMap.forEach(tile => {
+        tile.addEventListener('mousedown', (e) => {
+            if (pencilMODE){
+                tile.style.backgroundColor = "black";
+                clicked = true;
+            } 
+        });
+        tile.addEventListener('mouseover', (e) => {
+            if (pencilMODE && clicked==true) tile.style.backgroundColor = "black";
+        })
+        tile.addEventListener('mouseup', (e) => {clicked=false});
+        tile.ondragstart = () => false;
+    });
+}
+
 fillContainer();
+
+draw();
