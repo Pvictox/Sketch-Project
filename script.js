@@ -1,13 +1,19 @@
 const gridContainer = document.querySelector("#grid");
-
+const rangeInput = document.querySelector("#range-grid");
 let pencilMODE = true;
 
 /*
     sk-func TODO:
-        1 - Evento de clique em cada div para mudar a cor  <<< NEXT
+        
         2 - Permitir que o usuário mude a cor (necessário mexer em sk-UI);
         3 - Restart grid (todo branco) (necessário mexer em sk-UI);
 */
+
+let changeValueRangeText = (value) =>{
+    const rangeText = document.querySelector("#range-text");
+    rangeText.textContent = value.toString() + "X" + value.toString();
+}
+
 
 
 let fillContainer = (dimension = 16) => {
@@ -49,5 +55,5 @@ let draw = () =>{
 }
 
 fillContainer();
-
+changeValueRangeText(rangeInput.step);
 draw();
