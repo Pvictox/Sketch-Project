@@ -12,11 +12,20 @@ let pencilMODE = true;
 let changeValueRangeText = (value) =>{
     const rangeText = document.querySelector("#range-text");
     rangeText.textContent = value.toString() + "X" + value.toString();
+    fillContainer(value);
+}
+
+let clearContainer = () => {
+    if (gridContainer.hasChildNodes){
+        while(gridContainer.firstChild){
+            gridContainer.removeChild(gridContainer.lastChild);
+        }
+    }
 }
 
 
-
-let fillContainer = (dimension = 16) => {
+let fillContainer = (dimension) => {
+    clearContainer();
     //100% / quant de blocos por linha
     let flexBasis_Value = 100/dimension;
     let gridWidth = gridContainer.offsetWidth;
@@ -32,6 +41,7 @@ let fillContainer = (dimension = 16) => {
         newDiv.style.flexBasis = flexBasis_Value.toString()+"%";
         gridContainer.appendChild(newDiv);
     }
+    draw();
 }
 
 
@@ -54,6 +64,5 @@ let draw = () =>{
     });
 }
 
-fillContainer();
-changeValueRangeText(rangeInput.step);
-draw();
+rangeInput.value = 16;
+changeValueRangeText(rangeInput.value);
