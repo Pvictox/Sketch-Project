@@ -3,14 +3,28 @@ const rangeInput = document.querySelector("#range-grid");
 const colorInput = document.querySelector("#color-input");
 const clearButton = document.querySelector("#clear-button");
 const rangeText = document.querySelector("#range-text");
+const randomButton = document.querySelector("#random-button");
+
+
 let pencilMODE = true;
 let currentColor = "black";
 let currentSize = 0 ;
 let out=true;
+let randomMode = false;
+
 /*
     sk-func TODO:
         1 - Modo cor aleatória (Necessário criar button em sk-UI)
 */
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 let changeValueRangeText = (value) =>{
     rangeText.textContent = value.toString() + "X" + value.toString();
@@ -68,19 +82,31 @@ gridContainer.addEventListener('mouseenter', (e)=>{
     out = false;
 })
 
-
+randomButton.addEventListener('click', ()=>{
+    randomMode = !randomMode;
+})
 
 let draw = () =>{
     gridMap = document.querySelectorAll(".cell");
     gridMap.forEach(tile => {
         tile.addEventListener('mousedown', (e) => {
             if (pencilMODE){
-                tile.style.backgroundColor = currentColor;
+                if (randomMode == false){
+                    tile.style.backgroundColor = currentColor;
+                }else{
+                    tile.style.backgroundColor = getRandomColor();
+                }
                 clicked = true;
             } 
         });
         tile.addEventListener('mouseover', (e) => {
-            if (pencilMODE && clicked===true && out==false) tile.style.backgroundColor = currentColor;
+            if (pencilMODE && clicked===true && out==false){
+                if (randomMode==false){
+                    tile.style.backgroundColor = currentColor;
+                }else{
+                    tile.style.backgroundColor = getRandomColor();
+                }
+            } 
         })
         tile.addEventListener('mouseup', (e) => {
             clicked=false;
