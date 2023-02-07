@@ -1,33 +1,34 @@
 const gridContainer = document.querySelector("#grid");
 const rangeInput = document.querySelector("#range-grid");
 const colorInput = document.querySelector("#color-input");
+const clearButton = document.querySelector("#clear-button");
+const rangeText = document.querySelector("#range-text");
 let pencilMODE = true;
 let currentColor = "black";
-
+let currentSize = 0 ;
 /*
     sk-func TODO:
-        
-        2 - Permitir que o usuário mude a cor (necessário mexer em sk-UI);
-        3 - Restart grid (todo branco) (necessário mexer em sk-UI);
+        1 - Modo cor aleatória (Necessário criar button em sk-UI)
 */
 
 let changeValueRangeText = (value) =>{
-    const rangeText = document.querySelector("#range-text");
     rangeText.textContent = value.toString() + "X" + value.toString();
-    fillContainer(value);
+    currentSize = value;
+    clearContainer(value);
 }
 
-let clearContainer = () => {
+let clearContainer = (value) => {
     if (gridContainer.hasChildNodes){
         while(gridContainer.firstChild){
             gridContainer.removeChild(gridContainer.lastChild);
         }
     }
+    fillContainer(value);
 }
 
 
 let fillContainer = (dimension) => {
-    clearContainer();
+    //clearContainer();
     //100% / quant de blocos por linha
     let flexBasis_Value = 100/dimension;
     let gridWidth = gridContainer.offsetWidth;
@@ -50,6 +51,9 @@ colorInput.addEventListener('input', ()=>{
     currentColor = colorInput.value;
 })
 
+clearButton.addEventListener('click', (e)=>{
+    clearContainer(currentSize);
+})
 let draw = () =>{
     gridMap = document.querySelectorAll(".cell");
     let clicked = false;
