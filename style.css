@@ -6,10 +6,11 @@
 
 :root{
     --white-color: rgb(255, 254, 254);
+    --background-black: rgb(28, 25, 25);
 }
 
 body{
-    background-color: black;
+    background-color: var(--background-black);
 }
 
 #position-grid{
@@ -26,7 +27,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
     border: 3px solid rgb(200, 43, 43);
     justify-content: center;
     align-items: center;

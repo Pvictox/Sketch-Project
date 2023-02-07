@@ -1,6 +1,8 @@
 const gridContainer = document.querySelector("#grid");
 const rangeInput = document.querySelector("#range-grid");
+const colorInput = document.querySelector("#color-input");
 let pencilMODE = true;
+let currentColor = "black";
 
 /*
     sk-func TODO:
@@ -44,7 +46,9 @@ let fillContainer = (dimension) => {
     draw();
 }
 
-
+colorInput.addEventListener('input', ()=>{
+    currentColor = colorInput.value;
+})
 
 let draw = () =>{
     gridMap = document.querySelectorAll(".cell");
@@ -52,12 +56,12 @@ let draw = () =>{
     gridMap.forEach(tile => {
         tile.addEventListener('mousedown', (e) => {
             if (pencilMODE){
-                tile.style.backgroundColor = "black";
+                tile.style.backgroundColor = currentColor;
                 clicked = true;
             } 
         });
         tile.addEventListener('mouseover', (e) => {
-            if (pencilMODE && clicked==true) tile.style.backgroundColor = "black";
+            if (pencilMODE && clicked==true) tile.style.backgroundColor = currentColor;
         })
         tile.addEventListener('mouseup', (e) => {clicked=false});
         tile.ondragstart = () => false;
