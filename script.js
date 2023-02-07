@@ -6,6 +6,7 @@ const rangeText = document.querySelector("#range-text");
 let pencilMODE = true;
 let currentColor = "black";
 let currentSize = 0 ;
+let out=true;
 /*
     sk-func TODO:
         1 - Modo cor aleatória (Necessário criar button em sk-UI)
@@ -25,6 +26,7 @@ let clearContainer = (value) => {
     }
     fillContainer(value);
 }
+
 
 
 let fillContainer = (dimension) => {
@@ -54,9 +56,22 @@ colorInput.addEventListener('input', ()=>{
 clearButton.addEventListener('click', (e)=>{
     clearContainer(currentSize);
 })
+
+let clicked = false;
+
+gridContainer.addEventListener('mouseleave', (e)=>{
+    out = true;
+    clicked=false;
+})
+
+gridContainer.addEventListener('mouseenter', (e)=>{
+    out = false;
+})
+
+
+
 let draw = () =>{
     gridMap = document.querySelectorAll(".cell");
-    let clicked = false;
     gridMap.forEach(tile => {
         tile.addEventListener('mousedown', (e) => {
             if (pencilMODE){
@@ -65,9 +80,11 @@ let draw = () =>{
             } 
         });
         tile.addEventListener('mouseover', (e) => {
-            if (pencilMODE && clicked==true) tile.style.backgroundColor = currentColor;
+            if (pencilMODE && clicked===true && out==false) tile.style.backgroundColor = currentColor;
         })
-        tile.addEventListener('mouseup', (e) => {clicked=false});
+        tile.addEventListener('mouseup', (e) => {
+            clicked=false;
+        });
         tile.ondragstart = () => false;
     });
 }
