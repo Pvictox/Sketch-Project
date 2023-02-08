@@ -7,9 +7,14 @@
 }
 
 :root{
-    --white-color: rgb(255, 254, 254);
-    --background-color: rgb(77, 130, 209);
-    --header-color: rgb(57, 95, 119);
+    --white-color:
+    rgb(255, 254, 254);
+    --background-color:
+    rgb(99 104 111);
+    --header-color:
+    rgb(57, 95, 119);
+    --sketch-back-color:
+    rgb(49 117 187);
 }
 
 body{
@@ -19,11 +24,12 @@ body{
 #header-name{
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     margin-left: 35%;
     background-color: var(--header-color);
     max-width: 55%;
     height: 50px;
+    box-shadow: 1px 1px 0px 0px rgb(74 67 67);
     border-radius: 40px;
     margin-bottom: 10px;
     font-family: 'Dancing Script', cursive;
@@ -38,20 +44,34 @@ body{
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    width: 1000px;
+    margin-left: 110px;
+    /*border: 3px solid red;*/
+    padding: 15px;
+    background-color: var(--sketch-back-color);
+}
+
+#grid-box{
+    border: 4px dashed rgb(14, 15, 14);
+    border-radius: 5px;
+    display: flex;
+    width: 1000px;
+    max-width: 60%;
 }
 
 #grid{
-    width: 940px;
-    height: 600px;
-    max-width: 50%;
+    width: 1000px;
+    height: 500px;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     /*background-color: aquamarine;*/
-    border: 3px solid rgb(200, 43, 43);
     justify-content: center;
     align-items: center;
 }
+
+
 
 .cell{
     /*width:470px;
