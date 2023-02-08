@@ -52,8 +52,9 @@ body{
 }
 
 #grid-box{
-    border: 4px dashed rgb(14, 15, 14);
-    border-radius: 5px;
+    border: 6px dashed rgb(14, 15, 14);
+    border-radius: 10px;
+    border-style: double inset;
     display: flex;
     width: 1000px;
     max-width: 60%;
