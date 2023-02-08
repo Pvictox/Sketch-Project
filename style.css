@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,13 +8,31 @@
 
 :root{
     --white-color: rgb(255, 254, 254);
-    --background-black: rgb(28, 25, 25);
+    --background-color: rgb(77, 130, 209);
+    --header-color: rgb(57, 95, 119);
 }
 
 body{
-    background-color: var(--background-black);
+    background-color: var(--background-color);
 }
 
+#header-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin-left: 35%;
+    background-color: var(--header-color);
+    max-width: 55%;
+    height: 50px;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+#header-name > h3 {
+    font-size: 40px;
+    color: var(--white-color);
+}
 #position-grid{
     display: flex;
     flex-direction: row-reverse;
