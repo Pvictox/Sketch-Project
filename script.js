@@ -65,6 +65,7 @@ let fillContainer = (dimension) => {
 
 colorInput.addEventListener('input', ()=>{
     currentColor = colorInput.value;
+    randomMode = false;
 })
 
 clearButton.addEventListener('click', (e)=>{
