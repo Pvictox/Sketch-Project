@@ -216,6 +216,10 @@ button {
     font-size: 15px;
 }
 
+.active-random{
+    background-color: black;
+}
+
 button img{
     margin-left: 5px;
 }

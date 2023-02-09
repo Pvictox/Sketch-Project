@@ -85,6 +85,11 @@ gridContainer.addEventListener('mouseenter', (e)=>{
 
 randomButton.addEventListener('click', ()=>{
     randomMode = !randomMode;
+    if (randomButton.classList.contains("active-random")){
+        randomButton.classList.remove("active-random");
+    }else{
+        randomButton.classList.add("active-random");
+    }
 })
 
 let draw = () =>{
