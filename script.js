@@ -27,7 +27,7 @@ function getRandomColor() {
 }
 
 let changeValueRangeText = (value) =>{
-    rangeText.textContent = value.toString() + "X" + value.toString();
+    rangeText.textContent = "Size: "+ value.toString() + " X " + value.toString();
     currentSize = value;
     clearContainer(value);
 }

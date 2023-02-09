@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+
 
 *{
     margin: 0;
@@ -7,14 +9,11 @@
 }
 
 :root{
-    --white-color:
-    rgb(255, 254, 254);
-    --background-color:
-    rgb(99 104 111);
-    --header-color:
-    rgb(57, 95, 119);
-    --sketch-back-color:
-    rgb(49 117 187);
+    --white-color: rgb(255, 254, 254);
+    --background-color: rgb(99 104 111);
+    --header-color: rgb(57, 95, 119);
+    --sketch-back-color: rgb(49 117 187);
+    --slider-back-color: rgba(15, 45, 167, 0.817);
 }
 
 body{
@@ -138,4 +137,57 @@ body{
 
 .function-text{
     font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
+
+#range-box{
+    border: 3px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    width: auto;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    background: var(--slider-back-color);
+    border-radius: 3px;
+    height: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    margin-top: -1px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: var(--white-color);
+
+}
+
+input[type="range"]::-moz-range-track{
+    background: var(--slider-back-color);
+    border-radius: 3px;
+    height: 8px;  
+}
+
+input[type="range"]::-moz-range-thumb{
+    background: var(--white-color);
+    border: none;
+    border-radius: 50%;
+    margin-top: -1px;
+    height: 10px;
+    width: 10px;
+
+}
+
