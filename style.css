@@ -39,7 +39,9 @@ body{
 #header-name > h3 {
     font-size: 40px;
     color: var(--white-color);
+    
 }
+
 #position-grid{
     display: flex;
     flex-direction: row-reverse;
@@ -89,11 +91,19 @@ body{
     justify-content: center;
     align-items: center;
     background-color: brown;
-    border: 3px solid black;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 0px black;
     margin-right: 20px;
     max-width: 100%;
     width: 300px;
     height: 300px;
+}
+
+#color-box, #range-box{
+    border: 3px black;
+    background-color: var(--white-color);
+    border-style: solid double;
+    border-color: rgb(32, 71, 71) rgb(217, 30, 30);
 }
 
 #color-input{
@@ -123,8 +133,6 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: 3px solid black;
-    background-color: var(--white-color);
     height: auto;
     width: 60%;
 }
@@ -144,19 +152,20 @@ body{
 }
 
 #range-box{
-    border: 3px solid black;
     margin-top: 5px;
+    background-color: var(--white-color);
     margin-bottom: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 7px;
 }
 
 input[type="range"]{
     -webkit-appearance: none;
     appearance: none;
+    margin-top: 3px;
     background: transparent;
     width: auto;
 }
