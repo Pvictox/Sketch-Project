@@ -90,8 +90,52 @@ body{
     background-color: brown;
     border: 3px solid black;
     margin-right: 20px;
-
     max-width: 100%;
     width: 300px;
     height: 300px;
+}
+
+#color-input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin-left: 13px;
+    cursor: pointer;
+}
+
+#color-input::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 4px solid rgb(0, 0, 0, 0.6);
+}
+
+#color-input::-moz-color-swatch {
+    border-radius: 50%;
+    border: 4px solid rgb(0, 0, 0, 0.6);
+}
+
+#color-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid black;
+    background-color: var(--white-color);
+    height: auto;
+    width: 60%;
+}
+
+#color-box > p {
+    /* align-self: flex-end; */
+}
+.image-icon{
+    width: 20px;
+    height: auto;
+}
+
+.function-text{
+    font-size: 20px;
 }

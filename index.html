@@ -21,9 +21,12 @@
             </div>
 
             <div id = "grid-functions">
+                <div id = "color-box">
+                    <p class="function-text"> Color <img src="./img/paint-brush.png" alt="pencil-icon" class="image-icon"> </p>
+                    <input type="color" id="color-input" value="rgb(0,0,0)">
+                </div>
                 <p id="range-text"></p>
                 <input type="range" id ="range-grid" min="2" max="40" onchange="changeValueRangeText(this.value);" step="1">
-                <input type="color" id="color-input" value="rgb(0,0,0)">
                 <button id="clear-button">Clear</button>
                 <button id="random-button">Random Mode</button>
             </div>
