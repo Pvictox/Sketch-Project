@@ -14,6 +14,7 @@
     --header-color: rgb(57, 95, 119);
     --sketch-back-color: rgb(49 117 187);
     --slider-back-color: rgba(15, 45, 167, 0.817);
+    --footer-color: rgba(17, 18, 23, 0.573);
 }
 
 body{
@@ -224,6 +225,31 @@ button img{
     margin-left: 5px;
 }
 
+#content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
+footer{
+    border: 3px solid black;
+    background: var(--footer-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.footer-icon{
+    width: 55px;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    transition: border .2s;
+}
 
+.footer-icon:hover{
+    border: 3px solid white;
+    border-radius: 50%;
+}

@@ -15,25 +15,33 @@
         <div id="header-name">
             <h3>Sketch!</h3>
         </div>
-        <div id = "position-grid">
-            <div id="grid-box">
-                <div id ="grid"></div>
+
+        <div id = "content">
+            <div id = "position-grid">
+                <div id="grid-box">
+                    <div id ="grid"></div>
+                </div>
+
+                <div id = "grid-functions">
+                    <div id = "color-box">
+                        <p class="function-text"> Color <img src="./img/paint-brush.png" alt="pencil-icon" class="image-icon"> </p>
+                        <input type="color" id="color-input" value="rgb(0,0,0)">
+                    </div>
+                    <div id = "range-box">
+                        <p id="range-text" class="function-text"></p>
+                        <input type="range" id ="range-grid" min="2" max="40" onchange="changeValueRangeText(this.value);" step="1">
+                    </div>
+                    <button id="clear-button">Clear <img src="./img/eraser.png" class="image-icon"></button>
+                    <button id="random-button">Random Mode <img src="./img/dices.png" class="image-icon"></button>
+                </div>
             </div>
 
-            <div id = "grid-functions">
-                <div id = "color-box">
-                    <p class="function-text"> Color <img src="./img/paint-brush.png" alt="pencil-icon" class="image-icon"> </p>
-                    <input type="color" id="color-input" value="rgb(0,0,0)">
-                </div>
-                <div id = "range-box">
-                    <p id="range-text" class="function-text"></p>
-                    <input type="range" id ="range-grid" min="2" max="40" onchange="changeValueRangeText(this.value);" step="1">
-                </div>
-                <button id="clear-button">Clear <img src="./img/eraser.png" class="image-icon"></button>
-                <button id="random-button">Random Mode <img src="./img/dices.png" class="image-icon"></button>
-            </div>
-        </div>
-        
+            <footer>
+                <img src="./img/github.png" class="footer-icon">
+                <img src="./img/linkedin.png" class="footer-icon">
+                <img src="./img/instagram.png" class="footer-icon">
+            </footer>
+        </div>        
         <script src="./script.js"></script>
     </body>
 </html>
