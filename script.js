@@ -24,6 +24,25 @@ function getRandomColor() {
     return color;
 }
 
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+  
+function rgbToHex(rgbColor) {
+    
+    let teste = currentColor.replace("rgb", "");
+    teste = teste.replace("(", "");
+    teste = teste.replace(")", "");
+    let r = teste.split(", ")[0];
+    let g = teste.split(", ")[1];
+    let b = teste.split(", ")[2];
+    r = +r;
+    g = +g;
+    b = +b;
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
 let changeValueRangeText = (value) =>{
     rangeText.textContent = "Size: "+ value.toString() + " X " + value.toString();
     currentSize = value;
@@ -113,6 +132,7 @@ let draw = () =>{
                 clicked = true;
             }else if (pickColorMode) {
                 currentColor = tile.style.backgroundColor;
+                colorInput.value = rgbToHex(currentColor);
                 pickColorMode = false;
                 pencilMODE = true;
                 dropperButton.classList.remove("active-button");
