@@ -4,18 +4,16 @@ const colorInput = document.querySelector("#color-input");
 const clearButton = document.querySelector("#clear-button");
 const rangeText = document.querySelector("#range-text");
 const randomButton = document.querySelector("#random-button");
-
+const dropperButton = document.querySelector("#dropper-button");
 
 let pencilMODE = true;
+let pickColorMode = false;
 let currentColor = "black";
 let currentSize = 0 ;
 let out=true;
 let randomMode = false;
 
-/*
-    sk-func TODO:
-        1 - Modo cor aleatória (Necessário criar button em sk-UI)
-*/
+
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -85,10 +83,20 @@ gridContainer.addEventListener('mouseenter', (e)=>{
 
 randomButton.addEventListener('click', ()=>{
     randomMode = !randomMode;
-    if (randomButton.classList.contains("active-random")){
-        randomButton.classList.remove("active-random");
+    if (randomButton.classList.contains("active-button")){
+        randomButton.classList.remove("active-button");
     }else{
-        randomButton.classList.add("active-random");
+        randomButton.classList.add("active-button");
+    }
+})
+
+dropperButton.addEventListener('click', ()=>{
+    pickColorMode = !pickColorMode;
+    pencilMODE = !pencilMODE;
+    if (dropperButton.classList.contains("active-button")){
+        dropperButton.classList.remove("active-button");
+    }else{
+        dropperButton.classList.add("active-button");
     }
 })
 
@@ -103,7 +111,12 @@ let draw = () =>{
                     tile.style.backgroundColor = getRandomColor();
                 }
                 clicked = true;
-            } 
+            }else if (pickColorMode) {
+                currentColor = tile.style.backgroundColor;
+                pickColorMode = false;
+                pencilMODE = true;
+                dropperButton.classList.remove("active-button");
+            }
         });
         tile.addEventListener('mouseover', (e) => {
             if (pencilMODE && clicked===true && out==false){
