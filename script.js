@@ -112,6 +112,11 @@ randomButton.addEventListener('click', ()=>{
 dropperButton.addEventListener('click', ()=>{
     pickColorMode = !pickColorMode;
     pencilMODE = !pencilMODE;
+    if (pickColorMode){
+        gridContainer.style.cursor = "crosshair";
+    }else{
+        gridContainer.style.cursor = "default";
+    }
     if (dropperButton.classList.contains("active-button")){
         dropperButton.classList.remove("active-button");
     }else{
@@ -136,6 +141,7 @@ let draw = () =>{
                 pickColorMode = false;
                 pencilMODE = true;
                 dropperButton.classList.remove("active-button");
+                gridContainer.style.cursor = "default";
             }
         });
         tile.addEventListener('mouseover', (e) => {
